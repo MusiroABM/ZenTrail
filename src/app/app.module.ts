@@ -4,9 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//-----------------------------------------
+import { HolaMundo } from './componentes/holamundo/holamundo.component'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HolaMundo
   ],
   imports: [
     BrowserModule,
