@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'zentrailFront';
+
+  rutasPrueba = [
+    'Fuente Serna', 'Camino del Lago', 'Paseo del melocotón'
+  ]
 }
