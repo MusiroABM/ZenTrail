@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
     styleUrls: ['holamundo.component.css']
 })
 export class HolaMundo {
-    title = 'Soy el título!'
+    title = 'Bienvenido a ZenTrail!'
 }

@@ -1,0 +1,61 @@
+
+<h2>Rutas</h2>
+<ul>
+  <li *ngFor="let ruta of rutasPrueba">
+     <app-ruta [nombreRuta] = "ruta"></app-ruta> <!-- o también -> ruta nombreRuta={{ruta}} --> 
+  </li>
+</ul>
+
+<h2>Activado?</h2>
+<ul>
+  <li>
+    <div *ngIf="mostrar; else noActivado">Sí</div>
+    <ng-template #noActivado>No</ng-template>
+  </li>
+</ul>
+<button (click)="cambiaEstado()">Activar/Desactivar</button>
+<hr>
+
+<div>
+  <p>Nombre ruta: {{nombre}}</p>
+  <p>Distancia total: {{distancia}} kms</p>
+  <p>Dirección:</p>
+  <ul>
+    <li>{{direccion.provincia}}</li>
+    <li>{{direccion.puntoInicio}}</li>
+    <li>{{direccion.puntoFin}}</li>
+  </ul>
+</div>
+
+<hr>
+<!-- Eventos --> 
+
+<h2>Añadir ruta</h2>
+<form (submit)="nuevaRuta(textoRuta)"> <!-- evitar la recarga de la página ya que es una SPA --> 
+  <input type="text" #textoRuta> <!-- se crea una referencia para pasarla como parámetro --> 
+  <button>Crear</button>
+</form>
+
+
+<h2>Rutas</h2>
+<ul>
+  <li *ngFor="let ruta of rutasPrueba">
+     <app-ruta [nombreRuta] = "ruta"></app-ruta>
+     <button (click)="valoracion()">Descripción de {{ruta}}</button>
+     <button (click)="eliminarRuta(ruta)">Borrar</button>
+  </li>
+</ul>
+<button (click)="saludar()">
+  Click me!
+</button>
+<hr>
+<!-- Data binding --> 
+<div>
+  <h2>Senderista</h2>
+  <form>
+    <input type="text" name="nameSen" [(ngModel)]="nombreSen">
+    <input type="text" name="ageSen" [(ngModel)]="edadSen">
+  </form>
+  Nombre introducido: {{nombreSen}} <br>
+  Edad introducida: {{edadSen}} años
+</div>

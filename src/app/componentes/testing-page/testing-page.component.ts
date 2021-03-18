@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { ObtenerDatosService } from './servicios/obtener-datos.service'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-testing-page',
+  templateUrl: './testing-page.component.html',
+  styleUrls: ['./testing-page.component.css']
 })
-export class AppComponent {
-  title = 'zentrailFront';
+export class TestingPageComponent {
 
   rutasPrueba: string[] = [
     'Fuente Serna', 'Camino del Lago', 'Paseo del melocotón'
@@ -22,10 +20,7 @@ export class AppComponent {
   };
   comentarios: string[];
 
-  constructor(private servicioObtenerDatos: ObtenerDatosService) {
-    this.servicioObtenerDatos.obtenerPosts().subscribe(datos => {
-      this.datos=datos
-    });
+  constructor(){
     this.nombre=this.rutasPrueba[0];
     this.distancia=3.6;
     this.direccion = {
@@ -66,10 +61,7 @@ export class AppComponent {
     return false; //evita la recarga web
   }
 
-  //Data binding
+  //------------------------------------Data binding
   nombreSen:string = 'Ejemplo';
   edadSen:number = 0;
-
-  datos = [];
-  
 }

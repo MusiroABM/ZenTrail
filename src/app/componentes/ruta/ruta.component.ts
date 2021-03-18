@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./ruta.component.css']
 })
 export class RutaComponent implements OnInit {
-  @Input() nombreRuta; //entrada del componenete
+  @Input() nombreRuta; //entrada del componente
   constructor() { }
 
   ngOnInit(): void {
